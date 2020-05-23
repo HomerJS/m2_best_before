@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Tarknaiev_BestBefore::css/custom.css" />
+    </head>
+    <body>
+        <referenceContainer name="product.info.main">
+                <block class="Tarknaiev\BestBefore\Block\Product\Show" name="best.before.attribute.show"
+                       template="Tarknaiev_BestBefore::product/show.phtml" after="product.info.price" />
+        </referenceContainer>
+    </body>
+</page>

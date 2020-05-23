@@ -1,0 +1,14 @@
+{
+  "name": "tarknaiev/best-before",
+  "license": "proprietary",
+  "description": "Add Best-Before attribute to product entity",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Tarknaiev\\BestBefore\\": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var \Tarknaiev\BestBefore\Block\Product\Show $block */
+?>
+<?php $product = $block->getProduct(); ?>
+
+<?php if ($product && $bestBefore = $product->getBestBefore()) : ?>
+    <div class="container">
+        <div class="traffic_jam">
+            <div>Best Before Info</div>
+            <span class="dot" style="background-color: <?= $bestBefore ?>"></span>
+        </div>
+    </div>
+<?php endif; ?>
