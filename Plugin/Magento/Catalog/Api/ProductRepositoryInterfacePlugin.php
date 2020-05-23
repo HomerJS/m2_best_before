@@ -31,13 +31,13 @@ class ProductRepositoryInterfacePlugin
 
     /**
      * @param ProductInterface $entity
-     * @return string|null
+     * @return int|null
      */
-    protected function countBestBeforeData(ProductInterface $entity) :? string
+    protected function countBestBeforeData(ProductInterface $entity) :? int
     {
         $bestBeforeDate = $entity->getCustomAttribute(AddBestBeforeAttribute::BEST_BEFORE_CUSTOM_ATTRIBUTE);
         if ($bestBeforeDate && $bestBeforeDate->getValue()) {
-            return $this->helper->getColour($bestBeforeDate->getValue());
+            return $this->helper->getDaysForNextDate($bestBeforeDate->getValue());
         }
         return null;
     }

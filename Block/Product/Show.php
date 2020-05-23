@@ -9,6 +9,7 @@ use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use Tarknaiev\BestBefore\Helper\Dates;
 
 /**
  * Class Show
@@ -29,16 +30,24 @@ class Show extends Template implements IdentityInterface
     protected $productRepository;
 
     /**
+     * @var Dates
+     */
+    protected $helper;
+
+    /**
      * Show constructor.
      * @param Context $context
      * @param ProductRepositoryInterface $productRepository
+     * @param Dates $helper
      * @param array $data
      */
     public function __construct (
         Context $context,
         ProductRepositoryInterface $productRepository,
+        Dates $helper,
         array $data = []
     ) {
+        $this->helper = $helper;
         $this->productRepository = $productRepository;
         parent::__construct($context, $data);
     }
@@ -61,6 +70,15 @@ class Show extends Template implements IdentityInterface
         }
 
         return $this->currentProduct;
+    }
+
+    /**
+     * @param $date
+     * @return string
+     */
+    public function getColour($date) : string
+    {
+        return $this->helper->getColour($date);
     }
 
     /**

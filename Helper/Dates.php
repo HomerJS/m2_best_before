@@ -43,12 +43,11 @@ class Dates extends AbstractHelper
     }
 
     /**
-     * @param $borderDate
+     * @param $daysLeft
      * @return string
      */
-    public function getColour($borderDate): string
+    public function getColour($daysLeft): string
     {
-        $daysLeft = $this->getDaysForNextDate($borderDate);
         switch ($daysLeft) {
             case $daysLeft >= 14:
                 $result = "green";
